@@ -13,6 +13,7 @@ public class BoardVo {
 	private char isDel;
 	private int views;
 	private Date delDate;
+	
 	public int getNum() {
 		return num;
 	}
@@ -38,24 +39,24 @@ public class BoardVo {
 		this.content = content;
 	}
 	public String getRegisterDate() {
-		SimpleDateFormat transFormat =
-				new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+		SimpleDateFormat transFormat = 
+				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String to = transFormat.format(registerDate);
-		
+
 		return to;
 	}
 	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
 	public void setRegisterDate(String date) {
-		SimpleDateFormat transFormat =
-				new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+		SimpleDateFormat transFormat 
+			= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		try {
 			registerDate = transFormat.parse(date);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 	public char getIsDel() {
 		return isDel;

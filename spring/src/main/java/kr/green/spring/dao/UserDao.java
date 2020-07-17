@@ -6,4 +6,5 @@ public interface UserDao {
 	public String getPw(@Param("id")String id);
 
 	public int getCount();
+
 }

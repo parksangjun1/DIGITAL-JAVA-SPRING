@@ -1,16 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>네이버</title>
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/naver.css">
-	<script src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
-	<script src="<%=request.getContextPath()%>/resources/js/naver.js"></script>
-	<script src="<%=request.getContextPath()%>/resources/js/rolling.js"></script>
+	<link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/naver.css">
+	<script src="<%= request.getContextPath() %>/resources/js/jquery.js"></script>
+	<script src="<%= request.getContextPath() %>/resources/js/naver.js"></script>
+	<script src="<%= request.getContextPath() %>/resources/js/rolling.js"></script>
 </head>
 <body>
 	<div class="box-whale">

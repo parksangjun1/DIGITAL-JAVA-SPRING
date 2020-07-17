@@ -7,23 +7,42 @@
     select * 
     	from board
     	where isDel = 'N'
+    	<if test="cri.type == 0">
+    		and 
+    		(writer like concat('%',#{cri.search},'%')
+    		or title like concat('%',#{cri.search},'%')
+    		or content like concat('%',#{cri.search},'%'))
+    	</if>
+    	<if test="cri.type == 1">
+    		and writer like concat('%',#{cri.search},'%')
+    	</if>
+    	<if test="cri.type == 2">
+    		and title like concat('%',#{cri.search},'%')
+    	</if>
+    	<if test="cri.type == 3">
+    		and content like concat('%',#{cri.search},'%')
+    	</if>
+    	order by num desc
+    	limit #{cri.pageStart},#{cri.perPageNum}
   </select>
   <select id="getBoard" resultType="kr.green.spring.vo.BoardVo">
-    select * from board where num = #{num}
+    select * 
+    	from board 
+    	where num = #{num} 
   </select>
-  <update id="increaseView">
+  <update id="increaseViews">
   	update board
   		set
   			views = views+1
   		where
-  			num = #{num}	
+  			num = #{num}
   </update>
   <insert id="registerBoard">
   	insert into 
   		board(title,writer,content)
   		values(#{board.title},#{board.writer},#{board.content})
   </insert>
-  <update id = "updateBoard">
+  <update id="updateBoard">
   	update board
   		set
   			title = #{board.title},
@@ -31,6 +50,26 @@
   			isDel = #{board.isDel},
   			delDate = #{board.delDate}
   		where
-  			num = #{board.num}	
+  			num = #{board.num}
   </update>
+  <select id="getTotalCount" resultType="int">
+    select count(*)
+    	from board
+    	where isDel = 'N'
+    	<if test="cri.type == 0">
+    		and 
+    		(writer like concat('%',#{cri.search},'%')
+    		or title like concat('%',#{cri.search},'%')
+    		or content like concat('%',#{cri.search},'%'))
+    	</if>
+    	<if test="cri.type == 1">
+    		and writer like concat('%',#{cri.search},'%')
+    	</if>
+    	<if test="cri.type == 2">
+    		and title like concat('%',#{cri.search},'%')
+    	</if>
+    	<if test="cri.type == 3">
+    		and content like concat('%',#{cri.search},'%')
+    	</if>
+  </select>
 </mapper>
