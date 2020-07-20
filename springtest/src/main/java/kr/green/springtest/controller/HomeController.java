@@ -21,6 +21,7 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
+	
 	@RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView home(ModelAndView mv,UserVo inputUser) {
 		logger.info("URI:/");
@@ -31,6 +32,22 @@ public class HomeController {
 		if(user == null) {
 			mv.addObject("isLogin", false);
 		}
+		return mv;
+	}
+	@RequestMapping(value = "/user/signup", method = {RequestMethod.GET})
+	public ModelAndView signupGet(ModelAndView mv) {
+		logger.info("URI:/signup:GET");
+		mv.setViewName("/main/signup");	
+		return mv;
+	}
+	@RequestMapping(value = "/user/signup", method = {RequestMethod.POST})
+	public ModelAndView signupPost(ModelAndView mv,UserVo user) {
+		logger.info("URI:/signup:POST");
+		if(userService.signup(user)) {
+			mv.setViewName("redirect:/");
+		}else {
+			mv.setViewName("redirect:/user/signup");
+		}			
 		return mv;
 	}
 }

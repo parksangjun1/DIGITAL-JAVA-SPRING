@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	<div class="container">
-	  	<a class="navbar-brand" href="<%=request.getContextPath()%>/">스프링</a>
+	  	<a class="navbar-brand" href="<%=request.getContextPath()%>/">메인</a>
 	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    	<span class="navbar-toggler-icon"></span>
 	  	</button>
@@ -12,10 +12,10 @@
 		        	<a class="nav-link" href="<%=request.getContextPath()%>/board/list">게시판</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link" href="<%=request.getContextPath()%>/user/signin">Sign in</a>
+		        	<a class="nav-link" href="<%=request.getContextPath()%>/user/signup">회원가입</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link" href="<%=request.getContextPath()%>/user/signup">Sign Up</a>
+		        	<a class="nav-link" href="<%=request.getContextPath()%>/user/signout">로그아웃</a>
 		      	</li>    
 	    	</ul>
 		</div> 
