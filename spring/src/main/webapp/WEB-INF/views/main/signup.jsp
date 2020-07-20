@@ -10,7 +10,7 @@
 		<div class="container-id">
 			<div class="text-id">아이디</div>
 			<div class="box-id">
-				<input type="text" name="id" id="id">
+				<input type="text" name="id" id="id" value="${user.id}">
 			</div>
 		</div>
 		<div class="container-pw">
